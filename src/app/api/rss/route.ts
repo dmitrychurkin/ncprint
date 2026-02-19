@@ -20,10 +20,10 @@ export async function GET() {
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${baseURL}/api/rss" rel="self" type="application/rss+xml" />
-    <managingEditor>${person.email || "noreply@example.com"} (${person.name})</managingEditor>
-    <webMaster>${person.email || "noreply@example.com"} (${person.name})</webMaster>
+    <managingEditor>${person.email} (${person.name})</managingEditor>
+    <webMaster>${person.email} (${person.name})</webMaster>
     <image>
-      <url>${baseURL}${person.avatar || "/images/avatar.jpg"}</url>
+      <url>${baseURL}${person.avatar}</url>
       <title>${blog.title}</title>
       <link>${baseURL}/blog</link>
     </image>

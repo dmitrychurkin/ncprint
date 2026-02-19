@@ -4,6 +4,7 @@ import {
   EffectsConfig,
   FontsConfig,
   MailchimpConfig,
+  Person,
   ProtectedRoutesConfig,
   RoutesConfig,
   SameAsConfig,
@@ -184,13 +185,24 @@ const mailchimp: MailchimpConfig = {
   },
 };
 
+const person: Person = {
+  firstName: "Natalia",
+  lastName: "Churkina",
+  name: `Natalia Churkina`,
+  role: "Co-founder of NCPrint",
+  avatar: "/images/avatar_190220261851.jpg",
+  email: "churkinataly1@gmail.com",
+  location: "Europe/London", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Ukrainian"], // optional: Leave the array empty if you don't want to display languages
+};
+
 // default schema data
 const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
-  description: home.description,
-  email: "lorant@once-ui.com",
+  name: "NCPrint",
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  email: "churkinataly1@gmail.com",
 };
 
 // social links
@@ -217,6 +229,7 @@ const socialSharing: SocialSharingConfig = {
 };
 
 export {
+  person,
   display,
   mailchimp,
   routes,

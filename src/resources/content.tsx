@@ -1,16 +1,6 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
-
-const person: Person = {
-  firstName: "Natalia",
-  lastName: "Churkina",
-  name: `Natalia Churkina`,
-  role: "CEO",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Europe/London", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Ukrainian"], // optional: Leave the array empty if you don't want to display languages
-};
+import { person, schema } from "./config";
 
 const newsletter: Newsletter = {
   display: true,
@@ -25,7 +15,7 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/dmitrychurkin",
     essential: true,
   },
   {
@@ -59,13 +49,13 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: schema.description,
   headline: <>Building bridges between design and code</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">{schema.name}</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -76,8 +66,8 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Natalia, a design engineer at <Text as="span" size="xl" weight="strong">{schema.name}</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    </>
   ),
 };
 
@@ -101,11 +91,21 @@ const about: About = {
     display: true,
     title: "Introduction",
     description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
+      <div>
+        Natalia is a Scotland-based &nbsp;
+        <Text
+          as='span'
+          weight='strong'
+          style={{
+            fontWeight: 600
+          }}
+        >
+          Entrepreneur / Engineer
+        </Text>&nbsp;
+        with a passion for transforming complex challenges
         into simple, elegant design solutions. Her work spans digital interfaces, interactive
         experiences, and the convergence of design and technology.
-      </>
+      </div>
     ),
   },
   work: {
@@ -159,8 +159,8 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "National University of Kyiv-Mohyla Academy",
+        description: <>Studied UI / UX</>,
       },
       {
         name: "Build the Future",
@@ -200,22 +200,18 @@ const about: About = {
         ],
       },
       {
-        title: "Next.js",
+        title: "Adobe Express",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Able to prototype in Adobe Express / InDesign</>
         ),
         tags: [
           {
-            name: "JavaScript",
-            icon: "javascript",
+            name: "PDF Print Engine",
+            icon: "pdf",
           },
           {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
+            name: "Acrobat Pro",
+            icon: "acrobat",
           },
         ],
         // optional: leave the array empty if you don't want to display images

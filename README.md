@@ -25,7 +25,7 @@ npm run dev
 
 **4. Edit config**
 ```
-src/resources/once-ui.config.js
+src/resources/config.js
 ```
 
 **5. Edit content**
